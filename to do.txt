@@ -1,0 +1,3 @@
+store links in 1 file
+get gitlab to push readme file to aws s3 bucket
+print output of s3 bucket public link
