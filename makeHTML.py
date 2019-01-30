@@ -25,10 +25,13 @@ while line:
     if "#" in line: # is this line a title or link?
         title = line.split("#")[1] # hashtag is useful only for README in GitLab
         file_html.write('<h2 href=' + line + ' style="background-color: yellow">' + title + '</h2>')
+        # print line
     else: # otherwise it's a link
         file_html.write("<p>")  
         file_html.write('<a href=' + line + '"">' + line + '</a>')
-        file_html.write("</p>")        
+        file_html.write("</p>")     
+        # print line   
+    print line
     line = file_readME.readline() # read the next line    
 file_readME.close() # close the source 
 file_html.write(closeDOM) 
