@@ -7,5 +7,6 @@ https://medium.com/edureka/ci-cd-pipeline-5508227b19ca (Git, Jenkins, Docker)
 # TEST
 https://www.lambdatest.com/blog/using-pyunit-for-testing-a-selenium-python-test-suite/?utm_source=Linkedin&utm_medium=Blog&utm_campaign=Organic%20Posting&utm_term=CPage
 https://medium.com/bettercode/how-to-build-a-modern-ci-cd-pipeline-5faa01891a5b
+https://dev.to/himanshuseth004/test-automation-using-pytest-and-selenium-webdriver-jd8
 # VERSION CONTROL
 https://rachelcarmena.github.io/2018/12/12/how-to-teach-git.html (clearest explanation one I've seen so far)
