@@ -1,2 +1,5 @@
 to do.txt
 index.html
+test-reports
+.vscode
+tests/__pycache__
