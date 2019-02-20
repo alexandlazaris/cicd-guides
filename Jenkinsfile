@@ -2,6 +2,11 @@ pipeline {
     agent any 
     stages {
         stage('Build') { 
+            agent {
+                docker {
+                    image 'python:2-alpine' 
+                }
+            }
             steps {
                 //build
                 echo ">>> RUNNING PYTHON SCRIPT TO GENERATE HTML <<<"
