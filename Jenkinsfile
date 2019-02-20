@@ -5,7 +5,7 @@ pipeline {
             steps {
                 //build
                 echo ">>> RUNNING PYTHON SCRIPT TO GENERATE HTML <<<"
-                python makeHTML.py
+                sh 'python makeHTML.py'
                 ls -l 
             }
         }
@@ -13,7 +13,7 @@ pipeline {
             steps {
                 echo ">>> RUNNING PYTHON TESTS <<<"
                 mkdir test-reports
-                pytest --setup-show -v --junitxml test-reports/report.xml
+                sh 'pytest --setup-show -v --junitxml test-reports/report.xml'
             }
         }
         stage('Deploy') { 
