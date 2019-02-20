@@ -12,7 +12,7 @@ pipeline {
                 echo ">>> RUNNING PYTHON SCRIPT TO GENERATE HTML <<<"
                 sh 'python makeHTML.py'
                 sh 'ls -l' 
-                // archiveArtifacts artifacts: '*.html', fingerprint: true 
+                archiveArtifacts artifacts: '*.html', fingerprint: true 
             }
         }
         stage('Test') { 
