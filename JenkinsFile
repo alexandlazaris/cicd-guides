@@ -3,6 +3,7 @@ pipeline {
     stages {
         stage('Build') { 
             steps {
+                //build
                 echo ">>> RUNNING PYTHON SCRIPT TO GENERATE HTML <<<"
                 python makeHTML.py
                 ls -l 
