@@ -2,17 +2,12 @@ pipeline {
     agent any 
     stages {
         stage('Build') { 
-            // agent {
-            //     docker {
-            //         image 'python:2-alpine' 
-            //     }
-            // }
             steps {
-                //build
                 echo ">>> RUNNING PYTHON SCRIPT TO GENERATE HTML <<<"
                 sh 'python makeHTML.py'
                 sh 'ls -l' 
-                archiveArtifacts artifacts: '*.html', fingerprint: true 
+                stash(name: 'index', includes: 'index.html')
+                // archiveArtifacts artifacts: 'index.html', fingerprint: true 
             }
         }
         stage('Test') { 
@@ -25,6 +20,9 @@ pipeline {
         stage('Deploy') { 
             steps {
                 echo "Deploy things using AWS CLI" 
+                sh 'ls -l' 
+                unstash('index')
+                sh 'ls -l' 
                 sh 'aws s3 cp index.html s3://cicd-guide'
                 sh 'aws s3 ls s3://cicd-guide'
             }
