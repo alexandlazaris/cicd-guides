@@ -12,6 +12,7 @@ pipeline {
                 echo ">>> RUNNING PYTHON SCRIPT TO GENERATE HTML <<<"
                 sh 'python makeHTML.py'
                 sh 'ls -l' 
+                // archiveArtifacts artifacts: '*.html', fingerprint: true 
             }
         }
         stage('Test') { 
@@ -24,6 +25,8 @@ pipeline {
         stage('Deploy') { 
             steps {
                 echo "Deploy things using AWS CLI" 
+                sh 'aws s3 cp index.html s3://cicd-guide'
+                sh 'aws s3 ls s3://cicd-guide'
             }
         }
     }
