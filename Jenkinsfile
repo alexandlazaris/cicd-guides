@@ -25,9 +25,9 @@ pipeline {
                 unstash('index')
                 sh 'ls -l' 
                 echo ">>> list then copy file to s3 <<<"
-                sh "aws s3 ls '${awsS3url}'"
+                sh "aws s3 ls s3://cicd-guide"
                 sh 'aws s3 cp index.html s3://cicd-guide'
-                sh "aws s3 ls '${awsS3url}'"
+                sh "aws s3 ls s3://cicd-guide"
             }
         }
     }
