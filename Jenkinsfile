@@ -1,6 +1,13 @@
 pipeline {
     agent any 
     stages {
+        stage('Test') { 
+            steps {
+                echo ">>> RUNNING PYTHON TESTS <<<"
+                sh 'mkdir test-reports'
+                sh 'pytest --setup-show -v --junitxml test-reports/report.xml'
+            }
+        }
         stage('Build') { 
             steps {
                 echo ">>> RUNNING PYTHON SCRIPT TO GENERATE HTML <<<"
@@ -8,13 +15,6 @@ pipeline {
                 sh 'ls -l' 
                 stash(name: 'index', includes: 'index.html')
                 // archiveArtifacts artifacts: 'index.html', fingerprint: true 
-            }
-        }
-        stage('Test') { 
-            steps {
-                echo ">>> RUNNING PYTHON TESTS <<<"
-                sh 'mkdir test-reports'
-                sh 'pytest --setup-show -v --junitxml test-reports/report.xml'
             }
         }
         stage('Deploy') { 
