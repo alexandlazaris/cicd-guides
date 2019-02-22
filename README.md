@@ -11,3 +11,4 @@ https://medium.com/bettercode/how-to-build-a-modern-ci-cd-pipeline-5faa01891a5b
 https://dev.to/himanshuseth004/test-automation-using-pytest-and-selenium-webdriver-jd8
 # VERSION CONTROL
 https://rachelcarmena.github.io/2018/12/12/how-to-teach-git.html (clearest walkthrough I've seen so far) 
+https://dev.to/aershov24/11-painful-git-interview-questions-you-will-cry-on-1n2g
